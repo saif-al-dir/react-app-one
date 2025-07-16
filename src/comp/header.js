@@ -1,16 +1,62 @@
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
-
-
+import "./Header.css";
+import "../theme.css";
+// LEVEL2
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 const Header = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
     return (
-        <div>
-            <header className="hide-when-mobile">
-                <Link to="/">
-                    <h1>Al-Diresee.com</h1>
-                </Link>
-                
+        <div className="myheader">
+            <header className="hide-when-mobile ali">
+                <h1>
+                    <Link to="/">Al-Diresee.com</Link>
+                </h1>
+                {/* <button
+          onClick={() => {
+            toggleTheme(theme === "Light" ? "Dark" : "Light");
+          }}
+          className="theme-btn"
+        >
+          {theme}
+        </button> */}
+
+                <i
+                    onClick={() => {
+                        toggleTheme(theme === "Light" ? "Dark" : "Light");
+                    }}
+                    className="fa-solid fa-moon"
+                ></i>
+                <i
+                    onClick={() => {
+                        toggleTheme(theme === "Light" ? "Dark" : "Light");
+                    }}
+                    className="fa-solid fa-sun"
+                ></i>
+
                 <ul className="flex">
+
+                    <li className="main-list">
+                        <NavLink className="main-link" to="/signin">
+                            Sign-in
+                        </NavLink>
+
+                    </li>
+
+
+
+                    <li className="main-list">
+                        <NavLink className="main-link" to="/signup">
+                            Sign-up
+                        </NavLink>
+
+                    </li>
+
+
+
+
                     <li className="main-list">
                         <NavLink className="main-link" to="/html">
                             HTML
@@ -27,33 +73,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </li>
-                    <li className="main-list">
-                        <NavLink className="main-link" to="/css">
-                            CSS
-                        </NavLink>
-                        <ul className="sub-ul">
-                            <li>
-                                <a href="">Full Course</a>
-                            </li>
-                            <li>
-                                <a href="">CSS Examples</a>
-                            </li>
-                            <li className="mini-projects">
-                                <a href="">mini projects&nbsp; + </a>
-                                <ul className="sub-sub-ul">
-                                    <li>
-                                        <a href="">project 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="">project 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="">project 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li className="main-list">
                         <NavLink className="main-link" to="/javascript">
                             JavaScript
@@ -67,9 +87,7 @@ const Header = () => {
                 </ul>
             </header>
 
-
-
-            <header style={{ backgroundColor: "gray" }} className="show-when-mobile">
+            <header className="show-when-mobile ali">
                 <h1>Al-Diresee.com</h1>
                 <label className="absolute" htmlFor="burger">
                     <i className="fas fa-bars" />
@@ -83,7 +101,7 @@ const Header = () => {
                         <input id="html" type="checkbox" />
                         <ul className="sub-div">
                             <li>
-                                <a href="">Full Course</a>
+                                <NavLink to="/html">Full Course</NavLink>
                             </li>
                             <li>
                                 <a href="">Crash Course</a>
@@ -100,7 +118,7 @@ const Header = () => {
                         <input id="css" type="checkbox" />
                         <ul className="sub-div">
                             <li>
-                                <a href="">Full Course</a>
+                                <NavLink to="/css">Full Course</NavLink>
                             </li>
                             <li>
                                 <a href="">CSS Examples</a>
@@ -131,7 +149,7 @@ const Header = () => {
                         <input id="js" type="checkbox" />
                         <ul className="sub-div">
                             <li>
-                                <a href="">coming soon🔥</a>
+                                <NavLink to="/javascript">coming soon🔥</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -139,6 +157,6 @@ const Header = () => {
             </header>
         </div>
     );
-}
+};
 
 export default Header;

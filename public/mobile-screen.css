@@ -1,10 +1,5 @@
-.show-when-mobile {
-  display: block;
-}
 
-.hide-when-mobile {
-  display: none;
-}
+
 
 /* ====================================
     1. Font Awesom hamburger menu
@@ -16,6 +11,22 @@
 }
 
 input {
+  display: block;
+}
+
+#burger{
+  display: none;
+}
+
+#html{
+  display: none;
+}
+
+#css{
+  display: none;
+}
+
+#js{
   display: none;
 }
 
@@ -24,7 +35,8 @@ input {
   transform: scaleX(1.4);
 }
 
-.fas {
+
+.fas{
   position: absolute;
   right: 10vw;
 }
@@ -42,7 +54,7 @@ input {
   display: block;
 }
 
-label {
+label{
   font-size: 22px;
   /* border: 2px solid red; */
   display: block;
@@ -52,16 +64,20 @@ label {
 label:hover,
 .fa-bars:hover,
 .sub-div li a:hover,
-label:hover .fas {
+
+label:hover .fas
+
+{
   color: cyan;
   letter-spacing: 2px;
 }
 
-.sub-div li a {
+.sub-div li a{
+  
   display: block;
 }
 
-.main-div {
+.main-div{
   border-bottom: 2px solid black;
 }
 
@@ -79,24 +95,28 @@ label:hover .fas {
   display: block;
 }
 
-.sub-div li {
+
+.sub-div li{
   font-size: 17px;
   padding: 10px 0 10px 35px;
 }
 
+
+
 /* ====================================
     3. sub sub of css
 ======================================= */
-.sub-sub-div {
+.sub-sub-div{
   display: none;
   margin-top: 17px;
 }
 
-#mini:checked + .sub-sub-div {
+#mini:checked + .sub-sub-div{
   display: block;
 }
 
-.mini-projects {
+
+.mini-projects{
   padding: 0;
   font-size: 17px;
 }
